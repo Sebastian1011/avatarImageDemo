@@ -409,6 +409,7 @@
 				9E12BB4C1B7E17FB004F3048 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9E12BB4D1B7E17FB004F3048 /* Build configuration list for PBXNativeTarget "avatarImageTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +418,7 @@
 				9E12BB4F1B7E17FB004F3048 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

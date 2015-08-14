@@ -16,12 +16,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5D5-B9-bws">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5D5-B9-bws">
                                 <rect key="frame" x="204" y="212" width="192" height="176"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="5D5-B9-bws" secondAttribute="centerX" id="HD1-JX-UaW"/>
+                            <constraint firstAttribute="centerY" secondItem="5D5-B9-bws" secondAttribute="centerY" id="zl6-ca-aHE"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="5D5-B9-bws" id="0hx-Bj-BDd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
