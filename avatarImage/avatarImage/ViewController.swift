@@ -28,30 +28,6 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         self.imagePickerController.allowsEditing = true
         
         
-        
-        /*
-        //判断是否支持相机
-        if(UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)){
-            let alertController:UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
-            //iPad上使用表单需要设置anchor point
-            var popover = alertController.popoverPresentationController
-            /*if(popover != nil){
-                popover?.sourceView = sender
-                popover?.sourceRect = sender.bounds
-                popover?.permittedArrowDirections = UIPopoverArrowDirection.Any
-                
-            }*/
-            let cameraAction: UIAlertAction = UIAlertAction(title: "拍照", style: .Default){(action:UIAlertAction!) -> Void in
-                //设置类型
-                self.imagePickerController.sourceType = UIImagePickerControllerSourceType.Camera
-                self.presentViewController(self.imagePickerController, animated: true, completion: nil)
-            }
-            
-            alertController.addAction(cameraAction)
-            
-
-            
-        }*/
         //添加alertcontroller 样式为actionsheet
         let alertController = UIAlertController(title: "Test", message: "just do it", preferredStyle: .ActionSheet)
         var popover = alertController.popoverPresentationController
@@ -99,6 +75,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
             
             
             
+            
         })
         alertController.addAction(galeryAction)
         
@@ -109,17 +86,40 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     //imagePicker 事件实现
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
         picker.dismissViewControllerAnimated(true, completion: nil)
-        var image:UIImage!
+        var image: UIImage!
         
         //判断是否可以修改
         if (picker.allowsEditing){
             //剪裁图片
-            //image = info[UIImagePickerControllerEditedImage] as! UIImage
+            image = editingInfo[UIImagePickerControllerEditedImage] as? UIImage
             
         }
         else{
-            //image = info[UIImagePickerControllerOriginalImage] as! UIImage
+            image = editingInfo[UIImagePickerControllerOriginalImage] as? UIImage
         }
+        
+        self.saveImage(image, newSize: CGSize(width: 256, height: 256), percent: 0.5, imageName:"currentImage.png")
+        let fullPath: String = NSHomeDirectory().stringByAppendingPathComponent("Documents").stringByAppendingPathComponent("currentImage.png")
+        let savedImage:UIImage = UIImage(contentsOfFile: fullPath)!
+        self.isFullScreen = false
+        self.imageView.image = savedImage
+        
+        
+    }
+    
+    //将图片保存到沙盒缓存
+    func saveImage(currentImage: UIImage, newSize: CGSize, percent: CGFloat, imageName:String){
+        //压缩图片
+        UIGraphicsBeginImageContext(newSize)
+        currentImage.drawInRect(CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
+        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        let imageData: NSData = UIImageJPEGRepresentation(newImage, percent)
+        
+        let fullPath: String = NSHomeDirectory().stringByAppendingPathComponent("Documents").stringByAppendingPathComponent(imageName)
+        imageData.writeToFile(fullPath, atomically: false)
+        
         
     }
     
