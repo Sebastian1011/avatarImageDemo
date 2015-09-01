@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="20090517113525-936482883" translatesAutoresizingMaskIntoConstraints="NO" id="5D5-B9-bws">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tup" translatesAutoresizingMaskIntoConstraints="NO" id="5D5-B9-bws">
                                 <rect key="frame" x="204" y="212" width="192" height="176"/>
                             </imageView>
                         </subviews>
@@ -36,6 +36,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="20090517113525-936482883" width="500" height="283"/>
+        <image name="tup" width="220" height="220"/>
     </resources>
 </document>
