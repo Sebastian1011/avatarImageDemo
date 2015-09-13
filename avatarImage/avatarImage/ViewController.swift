@@ -84,18 +84,16 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     }
     
     //imagePicker 事件实现
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         picker.dismissViewControllerAnimated(true, completion: nil)
         var image: UIImage!
-        
         //判断是否可以修改
         if (picker.allowsEditing){
             //剪裁图片
-            image = editingInfo[UIImagePickerControllerEditedImage] as? UIImage
-            
+            image = info[UIImagePickerControllerOriginalImage] as! UIImage
         }
         else{
-            image = editingInfo[UIImagePickerControllerOriginalImage] as? UIImage
+            image = info[UIImagePickerControllerOriginalImage] as! UIImage
         }
         
         self.saveImage(image, newSize: CGSize(width: 256, height: 256), percent: 0.5, imageName:"currentImage.png")
