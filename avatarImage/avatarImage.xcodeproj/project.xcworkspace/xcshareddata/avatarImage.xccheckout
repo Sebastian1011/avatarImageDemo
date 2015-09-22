@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A500CEFD-C521-4EC4-8FCD-53350F9B97B7</string>
+	<key>IDESourceControlProjectName</key>
+	<string>avatarImage</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>19E8D6BB7E30B9A293B14E8C6E393897910B4876</key>
+		<string>https://github.com/Sebastian1011/avatarImageDemo.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>avatarImage/avatarImage.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>19E8D6BB7E30B9A293B14E8C6E393897910B4876</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Sebastian1011/avatarImageDemo.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>19E8D6BB7E30B9A293B14E8C6E393897910B4876</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>19E8D6BB7E30B9A293B14E8C6E393897910B4876</string>
+			<key>IDESourceControlWCCName</key>
+			<string>avatarImageDemo</string>
+		</dict>
+	</array>
+</dict>
+</plist>

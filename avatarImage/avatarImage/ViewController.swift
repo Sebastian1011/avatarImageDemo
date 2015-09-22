@@ -97,8 +97,9 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         }
         
         self.saveImage(image, newSize: CGSize(width: 256, height: 256), percent: 0.5, imageName:"currentImage.png")
-        let fullPath: String = NSHomeDirectory().stringByAppendingPathComponent("Documents").stringByAppendingPathComponent("currentImage.png")
-        let savedImage:UIImage = UIImage(contentsOfFile: fullPath)!
+        let documentsURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
+        let fullPath = documentsURL.URLByAppendingPathComponent("currentImage.png")
+        let savedImage:UIImage = UIImage(contentsOfFile: fullPath.path!)!
         self.isFullScreen = false
         self.imageView.image = savedImage
         
@@ -113,10 +114,10 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        let imageData: NSData = UIImageJPEGRepresentation(newImage, percent)
-        
-        let fullPath: String = NSHomeDirectory().stringByAppendingPathComponent("Documents").stringByAppendingPathComponent(imageName)
-        imageData.writeToFile(fullPath, atomically: false)
+        let imageData: NSData = UIImageJPEGRepresentation(newImage, percent)!
+        let documentsURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
+        let fullPath = documentsURL.URLByAppendingPathComponent(imageName)
+        imageData.writeToFile(fullPath.path!, atomically: false)
         
         
     }
