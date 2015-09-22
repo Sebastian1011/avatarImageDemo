@@ -17,7 +17,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        var singleTap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "imageViewTouch")
+        let singleTap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "imageViewTouch")
         self.imageView.addGestureRecognizer(singleTap)
     }
     
@@ -30,7 +30,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         
         //添加alertcontroller 样式为actionsheet
         let alertController = UIAlertController(title: "Test", message: "just do it", preferredStyle: .ActionSheet)
-        var popover = alertController.popoverPresentationController
+        let popover = alertController.popoverPresentationController
         if (popover != nil){
             popover?.sourceView = UIView()
             popover?.sourceRect = UIView().bounds
@@ -83,8 +83,10 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
+   
     //imagePicker 事件实现
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        
         picker.dismissViewControllerAnimated(true, completion: nil)
         var image: UIImage!
         //判断是否可以修改
